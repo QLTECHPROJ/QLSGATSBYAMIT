@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // siteUrl: `https://steamlinedesign.com/suchi/qls/graphql`,
-    siteUrl: `https://www.qlspace.com.au/graphql`,
+    siteUrl: `https://development.qlspace.com.au/graphql`,
   },
   plugins: [
     {
