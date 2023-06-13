@@ -142,7 +142,7 @@ export default function Partner() {
                                             <div className="list_tab_wg">
                                                 <ul>
                                                     <li><Link to='/event'>Events</Link></li>
-                                                    <li><Link to='/whats_new'>News</Link></li>
+                                                    <li><Link to='/news'>News</Link></li>
                                                     <li><Link to='/blog'>Blogs</Link></li>
                                                     <li className="active_cl"><Link to='/partner'>Partner News</Link></li>
                                                     <li><Link to='/videos'>Videos</Link></li>
@@ -178,7 +178,7 @@ export default function Partner() {
                                                             <div className="heading_nmb">
                                                                 <h4>
                                                                     <Link to={"/partner/" + partner.slug}>
-                                                                        {partner.title}  </Link>
+                                                                        {partner.title.split('').slice(0,50).join('')}...</Link>
                                                                 </h4>
                                                                 <div className="next_page">
                                                                     <Link to={"/partner/" + partner.slug} className="read-more"> Read more

@@ -1,10 +1,11 @@
 
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import "../stylee.css"
 import "../responsive.css"
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
+
 export default function Whatsnew() {
 
 	const [currentPage, setCurrentPage] = useState(1);
@@ -68,11 +69,6 @@ export default function Whatsnew() {
 					}
 
 					if (currentPage > 2) {
-						pageNumbers.push(
-							<li key="first">
-								<a href="#" onClick={() => handlePageClick(1)}>1</a>
-							</li>
-						);
 
 						if (currentPage > 3) {
 							pageNumbers.push(
@@ -144,12 +140,11 @@ export default function Whatsnew() {
 												<div className="list_tab_wg">
 													<ul>
 														<li ><Link to='/event'>Events</Link></li>
-														<li className="active_cl"><Link to='/whats_new'>News</Link></li>
+														<li className="active_cl"><Link to='/news'>News</Link></li>
 														<li><Link to='/blog'>Blogs</Link></li>
 														<li><Link to='/partner'>Partner News</Link></li>
 														<li><Link to='/videos'>Videos</Link></li>
-
-
+														{/* <li><Link to='/tab2'>Videos</Link></li> */}
 													</ul>
 												</div>
 											</div>
@@ -181,7 +176,8 @@ export default function Whatsnew() {
 																<div className="heading_nmb">
 																	<h4>
 																		<Link to={"/news/" + news.slug}>
-																			{news.title}  </Link>
+																			{news.title.split('').slice(0,50).join('')}...  </Link>
+																			
 																	</h4>
 																	<div className="next_page">
 																		<Link to={"/news/" + news.slug} className="read-more"> Read more
@@ -193,18 +189,13 @@ export default function Whatsnew() {
 														</div>
 													</div>
 												)
-
 											})}
-
-
 											<ul className="pagination"> 
 												{renderPageNumbers()}</ul>
-
 										</div>
 									</div>
 								</div>
 							</section>
-
 						</div>
 					</Layout>
 				)

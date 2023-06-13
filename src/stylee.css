@@ -464,6 +464,7 @@ footer.footer_wrap button.btn.btn-primary:hover {
   }
   .copy_right {
       margin-top: 30px;
+      margin-bottom: 20px;
   }
  
   .list_ys {
@@ -1104,7 +1105,7 @@ footer.footer_wrap button.btn.btn-primary:hover {
       box-sizing: border-box;
   }*/
   header .header_innerd {
-      background: #000 !important;
+      background: transparent !important;
   }
   header li.nav-item a {
       font-family: 'Nova Square';
@@ -1790,7 +1791,7 @@ background: #00D4FF;
   }
   
   .model_inncnr {
-      padding: 65px 55px;
+      padding: 65px 55px 30px 55px;
       background: #000000;
   }
   
@@ -2475,6 +2476,7 @@ background: #00D4FF;
       height: 333px;
       border-radius: 5px;
       overflow: hidden;
+      object-fit: cover;
   }
   .section04.bhg.extra_padinng{
       padding-bottom: 0;
@@ -2708,9 +2710,9 @@ background: #00D4FF;
   }
   .hbjhgbg {
       position: absolute;
-      top: 50%;
+      top: 18px;
       left: 15px;
-      transform: translate(0px, -50%);
+      
   }
   input.form-control.fomr:focus::-webkit-input-placeholder { color:transparent; }
   input.form-control.fomr:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
@@ -2823,8 +2825,8 @@ background: #00D4FF;
 }
 .image_gnbdd {
     position: relative;
-    height: auto;
-    width: 100%;
+    height: 350px;
+    width: 350px;
 }
 .image_hfgfss {
     width: 95%;
@@ -2909,10 +2911,12 @@ background: #00D4FF;
     position: relative;
     left: 0; 
 }
+.jhg_tfrd .fok_ng{display: none !important;}
+.jhg_tfrd .fok_ng_hggth{display: block !important;}
 .image_gnbdd {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 300px;
+    width: 300px;
 }
 .image_hfgfss {
     width: 95%;
@@ -2921,10 +2925,11 @@ background: #00D4FF;
     transform: translate(-50%, -50%);
     top: 50%;
 }
+
 }
 @media(max-width: 575px){
   .kj_bgvcdfs{
-      max-width: 320px;
+      max-width: 320px !important;
       margin: 0 auto; 
       }
       .ghbd2 img {
@@ -3061,6 +3066,7 @@ overflow: hidden !important;}
         text-align: center;
         border-radius: 100%;
         line-height: 25px;
+        border:none;
     }
     .ReactModal__Overlay{z-index: 99999;background: rgba(0, 0, 0, 0.5) !important;}
 
@@ -3098,6 +3104,7 @@ overflow: hidden !important;}
     margin: 0;
     border: solid 2px #00D4FF;
     line-height: 15px;
+    z-index: 9999;
 }
 .nav-link:focus, .nav-link:hover{color:#fff;}
 .vedio_details img{height: auto !important;padding-bottom: 20px;}
@@ -3119,3 +3126,224 @@ overflow: hidden !important;}
     line-height: 40px;
 }
 .pagination ul li.active a{border: solid 2px #fff;}
+header.sticky{background: #000 !important;}
+.scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+  }
+  
+  .scroll-top-button:hover {
+    opacity: 1;
+  }
+
+  .scroll_1{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png');transition:all 1s ease-in;}
+  .scroll_2{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png');transition:all 1s ease-in;}
+  .scroll_3{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png');transition:all 1s ease-in;}
+  .scroll_4{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png');transition:all 1s ease-in;}
+  .scroll_5{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png');transition:all 1s ease-in;}
+  .scroll_6{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png');transition:all 1s ease-in;}
+  .our_data_for_mob {
+    color: #fff !important;
+    margin-bottom: 20px !important;
+}
+.our_data_for_mob h2 {
+    font-size: 18px;
+    line-height: 21px;
+}
+.our_data_for_mob p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.our_data_for_mob ul {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.our_data_for_mob ul li {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    list-style: outside;
+    margin-bottom: 10px;
+}
+.imged {
+    width: 70%;
+    margin: 0 auto;
+}
+.solution_secanm{overflow: hidden !important;}
+
+.model_wrt 
+.model_inner {
+   max-width: 855px;
+}
+
+.model_inncnr {
+   padding: 65px 55px;
+   background: #000000;
+}
+
+.model_inncheadr h5 {
+   font-family: 'Roboto Condensed' !important;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 55px;
+   line-height: 64px;
+   text-align: right;
+   text-transform: uppercase;
+   color: #00D4FF;
+   text-align: center;
+   display: block;
+   width: 100%;
+}
+
+
+.our_span p {
+   font-family: 'Roboto Condensed' !important;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 30px;
+   line-height: 35px;
+   color: #FFFFFF;
+   text-align: center;
+   margin-bottom: 0;
+}
+.model_inncheadr button.btn-close {
+   background: #fff;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+}
+.form-control.fomr {
+   border: 3px solid #00D4FF;
+   border-radius: 5px;
+   height: 50px;
+   background: transparent;
+   color: #fff;
+   padding-left: 40px;
+   box-sizing: border-box;
+   margin-bottom: 15px;
+   position: relative;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 22px;
+   line-height: 27px;
+   color: #FFFFFF;
+   font-family: 'Nova Square' !important;
+}
+
+.form-control.fomr::placeholder{
+font-family: 'Nova Square' !important;
+font-style: normal;
+font-weight: 300;
+font-size: 22px;
+line-height: 27px;
+color: #FFFFFF;   
+}
+.main_ingh {
+   position: relative;
+}
+.hbjhgbg {
+   position: absolute;
+   top: 18px;
+   left: 15px;
+}
+button.btn.btn-primary.btn_desughn {
+   text-align: center;
+   width: auto;
+   background: #00D4FF;
+   border-radius: 5px;
+   padding: 12px 54px;
+   margin-top: 30px;
+   font-family: 'Nova Square' !important;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 27px;
+   color: #FFFFFF;
+}
+.modal-header.model_inncheadr {
+   display: block;
+   border: 0;
+   padding: 0px 0 40px 0px;
+   box-sizing: border-box;
+}
+.btrna {
+   text-align: center;
+}
+button.btn.btn-primary.btn_desughn:focus{
+   box-shadow: unset;
+}
+header li.nav-item.current-menu-item a {
+   color: #00D4FF !important;
+}
+.model_inncheadr button.btn-close {
+   background: #00D4FF;
+   color: #fff !important;
+   opacity: 1;
+   padding: 0;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   font-size: 20px;
+   border-radius: 100%;
+   text-align: center;
+}
+.form-control.fomr:focus{
+   box-shadow: unset;
+}
+
+ .contactpop iframe {
+    width: 100% !important;
+    
+}
+.contactpop button, input, optgroup, select, textarea{
+    font-family: 'Nova Square' !important;
+}
+.contactpop iframe {
+    height: 100% !important;
+    min-height: 470px !important;
+}
+.contactpop  iframe .wpcf7-not-valid-tip {
+    color: #dc3232;
+    font-size: 1em;
+    font-weight: normal;
+    display: block;
+    position: absolute !important;
+    bottom: -25px !important;
+}
+.hbjhgbg {
+    position: absolute ;
+    top: 18px;
+    left: 15px;
+}
+.wpcf7 form .wpcf7-response-output {
+    width: 90% !important;
+    position: absolute !important;
+}
+.our_news_leeter iframe{width: 100%;}
+@media(max-width: 575px){
+    .our_news_leeter iframe{min-height: 285px !important;}
+    .wpcf7 form .wpcf7-response-output{display: none !important;}
+    .contactpop iframe{min-height:570px;}
+    .wpcf7-form .col-6{width:100%;}
+
+}

@@ -147,7 +147,7 @@ export default function Event() {
                                                 <div className="list_tab_wg">
                                                     <ul>
                                                         <li className="active_cl"><Link to='/app/event.js'>Events</Link></li>
-                                                        <li ><Link to='/whats_new'>News</Link></li>
+                                                        <li ><Link to='/news'>News</Link></li>
                                                         <li><Link to='/blog'>Blogs</Link></li>
                                                         <li><Link to='/partner'>Partner News</Link></li>
                                                         <li><Link to='/videos'>Videos</Link></li>
@@ -186,7 +186,7 @@ export default function Event() {
                                                                     <div className="heading_nmb">
                                                                         <h4>
                                                                             <Link to={"/event/" + event.slug}>
-                                                                                {event.title}   </Link>
+                                                                                {event.title.split('').slice(0,50).join('')}...</Link>
                                                                         </h4>
                                                                         <div className="next_page">
                                                                             <Link to={"/event/" + event.slug} className="read-more"> Read more

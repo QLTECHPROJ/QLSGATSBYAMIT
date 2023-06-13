@@ -7,8 +7,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { useStaticQuery, graphql } from 'gatsby';
+import ScrollToTopButton from "../scroll_top/scroll_top";
 
 export default function NavBar(props) {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.getElementById("header");
+      const sticky = header.offsetTop;
+
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   library.add(faBars)
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => {
@@ -34,6 +54,7 @@ export default function NavBar(props) {
               }
             `}
       render={data => (
+
         <div>
           <div /*classNameName={props.headervisiblity}*/>
             <header id="header">
@@ -53,49 +74,52 @@ export default function NavBar(props) {
                         data.wpMenu &&
                         data.wpMenu.menuItems &&
                         data.wpMenu.menuItems.nodes.map((prop, i) => {
-                          return (
-                            <>
-                              {
-                                <>
-                                  {prop.label == "Home" ? (
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                    onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={"/"}
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                  ) : (
-                                    <li  className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                    onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={
-                                          "/" +
-                                          prop.label
-                                            .replace(/\s+/g, "_")
-                                            .replace("'", "")
-                                            .toLowerCase()
-                                        }
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
+                          
+                          const itemToRender = prop.label === "Home" ?
+                            (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={"/"}
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            ) : prop.label === "What's New" ? (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={"/news"}
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            ) : (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={
+                                    "/" +
+                                    prop.label
+                                      .replace(/\s+/g, "_")
+                                      .replace("'", "")
+                                      .toLowerCase()
+                                  }
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            )
 
-                                  )}
-                                </>
-                              }
-                            </>
-                          );
-                        })}
-
-                     
-
-
+                          return itemToRender;
+                        })
+                      }
                       <div /*style={navev}*/></div>
                     </ul>
                     <div className="our_cong d-flex">
@@ -116,10 +140,13 @@ export default function NavBar(props) {
             style={{ display: showModal ? "block" : "none" }}>
 
           </div>
-          <div className="modal fade model_wrt show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
+          <div className="scrollbtn">
+            <ScrollToTopButton />
+          </div>
+          <div className="modal fade model_wrt contactpop show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
 
             <div className="modal-dialog modal-dialog-centered model_inner">
-              <div className="modal-content model_inncnr">
+              <div className="modal-content model_inncnr" style={{ padding: '65px 55px 20px 55px' }}>
                 <div className="modal-header model_inncheadr">
                   <h5 className="modal-title title_wrap" id="contact_usLabel">Get in touch</h5>
                   <div className="our_span"><p>Fill up the form our team will get back to you within 24 Hours</p></div>
@@ -130,7 +157,7 @@ export default function NavBar(props) {
 
                     <div className="wpcf7 js" id="wpcf7-f463-o1" lang="en-US" dir="ltr">
                       <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                      <form action="/#wpcf7-f463-o1" method="post" class="wpcf7-form init" aria-label="Contact form" noValidate="noValidate" data-status="init">
+                      {/* <form action="/#wpcf7-f463-o1" method="post" class="wpcf7-form init" aria-label="Contact form" noValidate="noValidate" data-status="init">
                         <div style={{ display: 'none' }}>
                           <input type="hidden" name="_wpcf7" value="463" />
                           <input type="hidden" name="_wpcf7_version" value="1681278275" />
@@ -195,7 +222,12 @@ export default function NavBar(props) {
 
                           </div>
                         </div><div className="wpcf7-response-output" aria-hidden="true"></div>
-                      </form>
+                      </form> */}
+                      <iframe
+                        id="myIframe"
+                        src="https://www.qlspace.com.au/contact-us/"
+                        scrolling="no"
+                      ></iframe>
                     </div>
                   </div>
                 </div>

@@ -17,6 +17,7 @@ import icon3 from '../../image/map.png';
 import icon4 from '../../image/phone.png';
 import icon5 from '../../image/phone.png';
 import { graphql } from 'gatsby';
+import ScrollToTopButton from '../scroll_top/scroll_top'
 
 export default function Footer() {
 	library.add(faEnvelope)
@@ -46,11 +47,16 @@ export default function Footer() {
 									<div className="row">
 										<div className="col-md-12">
 											<h2>Subscribe to our newsletter</h2>
-											<p>Lörem ipsum monomubegt håd epiv dide.</p>
+											<p>Join our community and never miss a beat</p>
 										</div>
 										<div className="col-md-12">
 											<div className="our_news_leeter">
-												<form className="row g-3">
+												<iframe
+													id="myIframe"
+													src="https://www.qlspace.com.au/newsletter/"
+													 scrolling="no" style={{ width:'100%', height:'auto',minHeight:'178px'  }}
+												></iframe>
+												{/* <form className="row g-3">
 													<div className="col-md-6">
 														<div className="hfnfa">
 															<input type="text" className="form-control" id="name" placeholder="Enter Name" />
@@ -69,10 +75,10 @@ export default function Footer() {
 															</div>
 														</div>
 													</div>
-													<div className="col-12">
+													<div className="col-12 mt-5">
 														<button type="submit" className="btn btn-primary">Submit</button>
 													</div>
-												</form>
+												</form> */}
 											</div>
 										</div>
 									</div>
@@ -92,12 +98,12 @@ export default function Footer() {
 													</div>
 													<div className="list_s">
 														<ul>
-															<li><Link to="https://www.facebook.com/qlspaces">
-															<img src={frame1} alt="" /></Link></li>
-															<li><Link to='https://www.linkedin.com/company/qlspace/' ><img src={frame2} alt="" /></Link></li>
-															<li><Link to="https://twitter.com/qlspace_"><img src={frame3} alt="" /></Link></li>
-															<li><Link to="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos"><img src={frame4} alt="" /></Link></li>
-															<li><Link to=""><img src={frame5} alt="" /></Link></li>
+															<li><a href="https://www.facebook.com/qlspaces" target="_blank">
+																<img src={frame1} alt="" /></a></li>
+															<li><a href='https://www.linkedin.com/company/qlspace/'target="_blank"  ><img src={frame2} alt="" /></a></li>
+															<li><a href="https://twitter.com/qlspace_" target="_blank"><img src={frame3} alt="" /></a></li>
+															<li><a href="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos" target="_blank"><img src={frame4} alt="" /></a></li>
+															<li><a href="#" ><img src={frame5} alt="" /></a></li>
 														</ul>
 													</div>
 												</div>
@@ -124,7 +130,19 @@ export default function Footer() {
 																							{prop.label}
 																						</Link>
 																					</li>
-																				) : (
+																				): prop.label === "What's New" ? (
+																					<li className="nav-item"
+																					 >
+																					  <Link
+																						to={"/news"}
+																						className="nav-link"
+																						activeClassName="active"
+																					  >
+																						{prop.label}
+																						
+																					  </Link>
+																					</li>
+																				  ) : (
 																					<li className="nav-item">
 																						<Link
 																							to={
@@ -164,7 +182,7 @@ export default function Footer() {
 														<div className="righti_text">
 															<div className="rig_th">
 																<span>Mail</span>
-																<p><Link to="mailto:info@qlspace.com.au">info@qlspace.com.au</Link></p>
+																<p><a href="mailto:info@qlspace.com.au">info@qlspace.com.au</a></p>
 															</div>
 														</div>
 													</div>
@@ -208,7 +226,7 @@ export default function Footer() {
 															<div className="rig_th">
 																<span>Tel</span>
 																<p>
-																	<Link to="tel:+61 8 6262 3559">+61 8 6262 3559</Link>
+																	<a href="tel:+61 8 6262 3559">+61 8 6262 3559</a>
 																</p>
 
 															</div>
@@ -222,9 +240,9 @@ export default function Footer() {
 														</div>
 														<div className="righti_text">
 															<div className="rig_th">
-																<span>Tel</span>
+																<span>Phone</span>
 																<p>
-																	<Link to="tel:+61 410 881 616">+61 410 881 616</Link></p>
+																	<a href="tel:+61 410 881 616">+61 410 881 616</a></p>
 															</div>
 														</div>
 													</div>
@@ -239,7 +257,8 @@ export default function Footer() {
 										<div className="row">
 											<div className="col-md-6">
 												<div className="outg_o">
-													<p>Copyright ©2023 SPACE. Powered By <Link to="https://www.qltech.com.au/" target="_blank"> QL Tech </Link></p>
+
+													<p>Copyright ©2023 SPACE. Powered By <a href="https://www.qltech.com.au/" target="_blank"> QL Tech </a></p>
 												</div>
 											</div>
 											<div className="col-md-6">
@@ -260,7 +279,9 @@ export default function Footer() {
 								</div>
 							</footer>
 						</div>
+
 					</section>
+					<ScrollToTopButton />
 				</>
 			)
 
